@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= form.label :tiny_url %>
-    <%= form.text_field :tiny_url %>
+    <%= "http://#{request.host}:#{request.port}/" %><%= form.text_field :tiny_url %>
   </div>
 
   <div class="field">
     <%= form.label :expiration %>
-    <%= form.datetime_select :expiration %>
+    <%= form.datetime_select :expiration, :default=> DateTime.now+5 %>
   </div>
 
   <div class="actions">

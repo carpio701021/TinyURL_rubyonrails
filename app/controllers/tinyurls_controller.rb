@@ -18,7 +18,9 @@ class TinyurlsController < ApplicationController
     require 'securerandom'
     @tinyurl = Tinyurl.new
     # Prepopulate the random string
-    @tinyurl.tiny_url = "http://#{request.host}:#{request.port}/" + SecureRandom.urlsafe_base64(5)
+    @tinyurl.tiny_url = SecureRandom.urlsafe_base64(5)
+    #@tinyurl.expiration += 50
+    puts DateTime.now
   end
 
   # GET /tinyurls/1/edit

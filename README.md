@@ -1,24 +1,22 @@
-# README
+# Supuestos
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requerimientos funcionales:
 
-Things you may want to cover:
+- Dada una URL, nuestro servicio debe generar un alias más corto y único. Esto se llama un enlace corto. `http://localhost:3000/tinyurls`
 
-* Ruby version
+- Cuando los usuarios acceden a un enlace corto, nuestro servicio debería redirigirlos al enlace original. `http://localhost:3000/<enlace corto>`
 
-* System dependencies
+- Los usuarios, opcionalmente, deberían poder elegir un enlace corto personalizado para sus URL. `Campo abierto para poder ser editado (validado por si hay repetidos)`
 
-* Configuration
+- Los enlaces caducarán después de un intervalo de tiempo predeterminado estándar. Los usuarios deben poder especificar el tiempo de caducidad. `El tiempo predeterminado es de 5 días después. Validacion de url expirada.`
 
-* Database creation
+## Requerimientos no funcionales:
 
-* Database initialization
+- La redirección de URL debería ocurrir en tiempo real con una latencia mínima. `La condición está en el redirect. Me hubiera gustado usar redis para mantener en cache las urls pero por tiempo ya no lo implementé`
+- Los enlaces acortados no deben ser adivinables (no predecibles).
 
-* How to run the test suite
+## Requisitos extendidos (puntos extra):
 
-* Services (job queues, cache servers, search engines, etc.)
+- Analítica; Por ejemplo, ¿cuántas veces sucedió una redirección? `Incluido contador de redirecciones`
+- Nuestro servicio también debe ser accesible a través de una simple API REST (sin autenticación) por otros servicios. `Rails expone los servicios RESTful de forma predeterminada para poder ser consumidos como API.`
 
-* Deployment instructions
-
-* ...

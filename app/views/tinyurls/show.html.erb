@@ -2,17 +2,22 @@
 
 <p>
   <strong>Original url:</strong>
-  <%= @tinyurl.original_url %>
+  <a target="_blank" rel="noopener noreferrer"  href='<%= @tinyurl.original_url %>'><%= @tinyurl.original_url %></a>
 </p>
 
 <p>
   <strong>Tiny url:</strong>
-  <%= @tinyurl.tiny_url %>
+  <a target="_blank" rel="noopener noreferrer"  href='<%= "http://#{request.host}:#{request.port}/" %><%= @tinyurl.tiny_url %>'><%= "http://#{request.host}:#{request.port}/" %><%= @tinyurl.tiny_url %></a>
 </p>
 
 <p>
   <strong>Expiration:</strong>
   <%= @tinyurl.expiration %>
+</p>
+
+<p>
+  <strong>Used count:</strong>
+  <%= @tinyurl.used_count %>
 </p>
 
 <%= link_to 'Edit', edit_tinyurl_path(@tinyurl) %> |

@@ -16,8 +16,10 @@ ActiveRecord::Schema.define(version: 2019_03_15_021521) do
     t.string "original_url"
     t.string "tiny_url"
     t.datetime "expiration"
+    t.integer "used_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["tiny_url"], name: "index_tinyurls_on_tiny_url", unique: true
   end
 
 end
