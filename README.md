@@ -18,5 +18,5 @@
 ## Requisitos extendidos (puntos extra):
 
 - Analítica; Por ejemplo, ¿cuántas veces sucedió una redirección? `Incluido contador de redirecciones`
-- Nuestro servicio también debe ser accesible a través de una simple API REST (sin autenticación) por otros servicios. `Rails expone los servicios RESTful de forma predeterminada para poder ser consumidos como API.`
+- Nuestro servicio también debe ser accesible a través de una simple API REST (sin autenticación) por otros servicios. `Rails expone los servicios RESTful de forma predeterminada para poder ser consumidos como API. Usar 'rake routes' para saber las rutas del API.`
 
