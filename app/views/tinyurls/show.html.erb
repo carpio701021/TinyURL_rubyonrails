@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Original url:</strong>
+  <%= @tinyurl.original_url %>
+</p>
+
+<p>
+  <strong>Tiny url:</strong>
+  <%= @tinyurl.tiny_url %>
+</p>
+
+<p>
+  <strong>Expiration:</strong>
+  <%= @tinyurl.expiration %>
+</p>
+
+<%= link_to 'Edit', edit_tinyurl_path(@tinyurl) %> |
+<%= link_to 'Back', tinyurls_path %>

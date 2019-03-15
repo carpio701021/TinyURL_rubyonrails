@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tinyurls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Original url</th>
+      <th>Tiny url</th>
+      <th>Expiration</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tinyurls.each do |tinyurl| %>
+      <tr>
+        <td><%= tinyurl.original_url %></td>
+        <td><%= tinyurl.tiny_url %></td>
+        <td><%= tinyurl.expiration %></td>
+        <td><%= link_to 'Show', tinyurl %></td>
+        <td><%= link_to 'Edit', edit_tinyurl_path(tinyurl) %></td>
+        <td><%= link_to 'Destroy', tinyurl, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tinyurl', new_tinyurl_path %>

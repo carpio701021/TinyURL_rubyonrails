@@ -1,0 +1,32 @@
+<%= form_with(model: tinyurl, local: true) do |form| %>
+  <% if tinyurl.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tinyurl.errors.count, "error") %> prohibited this tinyurl from being saved:</h2>
+
+      <ul>
+      <% tinyurl.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :original_url %>
+    <%= form.text_field :original_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tiny_url %>
+    <%= form.text_field :tiny_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expiration %>
+    <%= form.datetime_select :expiration %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
